@@ -1,7 +1,9 @@
-# ImageJ macro extensions and extending auto completion in Fijis script editor
+# Extending macro auto completion in Fijis script editor
 Since we introduced auto-completion in Fijis script editor, some developers asked me 
-how they can make their tools discoverable by auto-completion users. 
-This article explains how to achieve this. I'm providing a [fully functional example](https://github.com/haesleinhuepf/extend-macro-autocompletion) as 
+how they can make their tools discoverable by auto-completion. 
+That's a good question as the auto-completion also allows pointing users to online
+resources or publications to cite.
+This tutorial explains how to achieve this. I'm providing a [fully functional example](https://github.com/haesleinhuepf/extend-macro-autocompletion) as 
 this might be a better starting point for developers.
 
 ![Image](images/custom_autocomplete_screenshot.png)
@@ -137,7 +139,6 @@ public int[] parameterTypes() {
     return new int[] {MacroExtension.ARG_STRING, MacroExtension.ARG_NUMBER};
 }
 ```
-
 ```java
 @Override
 public String parameters() {
@@ -147,7 +148,6 @@ public String parameters() {
 
 * A [description of the algorithm](https://github.com/haesleinhuepf/extend-macro-autocompletion/commit/5e10bab2e1e7b2389a7c2b528acf2473f798b7b8#diff-834e9703b61009f26a4f83ffe5c636e4R64-R71)
 to be shown in the auto-complete pulldown. This text supports simple [HTML](https://github.com/haesleinhuepf/extend-macro-autocompletion/commit/0da0983814c6128fc9f39e06cd667cecf015cd8c#diff-2187e4c3058b3cb68492cfc36ecf00ddR68-R76) by the way.
-
 ```java
 @Override
 public String description() {
