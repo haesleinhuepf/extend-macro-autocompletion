@@ -191,8 +191,9 @@ or implement the plugin service as suggested above.
 
 <a name="summary"></a>
 ## Summary
-It's not 100%ly trivial to implement ImageJ Macro Extensions and extending auto-completion and thus, I hope this tutorial helps. 
-Furthermore, this tutorial might be a starting point for a public discussion on how we as a community want to have ImageJ, Fiji and friends extensible.
+It's not 100%ly trivial to implement ImageJ Macro Extensions and extending auto-completion. 
+Thus, I hope this tutorial helps. 
+Furthermore, it might be a starting point for a public discussion on how we as a community want to have ImageJ, Fiji and friends extensible.
 
 I think users will thank developers if they go this step in order to simplify access to algorithms via ImageJ macro. 
 And if developers put links to citable software in the auto-completion, the user will thank by citing the software properly. I'm sure!
