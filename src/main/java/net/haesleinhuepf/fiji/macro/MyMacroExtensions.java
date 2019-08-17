@@ -51,7 +51,7 @@ public class MyMacroExtensions implements MacroExtension, Command {
         int i = 0;
         // formulate a list of ExtensionDescriptors describing all command this class can handle
         for (MyMacroExtensionDescriptor plugin : pluginList) {
-            String call = MyPlugins.macroExtensionPrefix + plugin.getClass().getSimpleName() + "(" + plugin.parameters() + ")";
+            String call = MyPlugins.macroExtensionPrefix + plugin.getClass().getSimpleName();
             result[i] = new ExtensionDescriptor(call, plugin.parameterTypes(), this);
             i++;
         }

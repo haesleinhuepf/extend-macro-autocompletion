@@ -28,8 +28,9 @@ public class MyMacroAutoCompletionExtension implements MacroExtensionAutoComplet
 
         // go through plugins and provide an auto-complete entry for each
         for (MyMacroExtensionDescriptor plugin : pluginList) {
-            String commandName = "Ext.MyLib_" + plugin.getClass().getSimpleName();
-            completions.add(new BasicCompletion(completionProvider, commandName, null, plugin.description()));
+            String commandName = "Ext.MyLib_" + plugin.getClass().getSimpleName() + "(" + plugin.parameters() + ")";
+            String description = "<b>" + commandName + "</b><br>" + plugin.description();
+            completions.add(new BasicCompletion(completionProvider, commandName, null, description));
         }
 
 
