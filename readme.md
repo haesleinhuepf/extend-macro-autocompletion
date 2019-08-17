@@ -1,4 +1,4 @@
-# Extending macro auto completion in Fijis script editor
+# Extending ImageJ Macro auto completion in Fijis script editor
 ## Outline
 * [Introduction](https://haesleinhuepf.github.io/extend-macro-autocompletion/#introduction)
 * [Starting point: a SciJava Fiji plugin](https://haesleinhuepf.github.io/extend-macro-autocompletion/#starting_point)
