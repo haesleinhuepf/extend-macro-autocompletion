@@ -1,0 +1,8 @@
+title: ImageJ macro extensions and extending auto completion in Fijis script editor
+logo: /images/haesleinhuepf.png
+description: A Tutorial
+show_downloads: false
+google_analytics:
+theme: jekyll-theme-minimal
+plugins:
+  - jekyll-redirect-from
