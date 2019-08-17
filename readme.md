@@ -62,11 +62,11 @@ It has two parameters: The `name` of the method which was called and the argumen
 Again, as it is odd to check the `name` variable for each individual method names, I suggest an alternative: 
 the method 
 [name shall be identical with the class name](https://github.com/haesleinhuepf/extend-macro-autocompletion/commit/5e10bab2e1e7b2389a7c2b528acf2473f798b7b8#diff-eabc1fa5161dcb95bfc0de38d0ae8aa2R33-R36) 
-of your plugins. 
+of your plugin prefixed with a custom library identifier preventing clashes with other macro extensions. 
 This is no must but I believe it's a welcome simplification.
 Furthermore, the object array usually comes with items of type `String` and `Double`. 
 Knowing this allows us to cast and parse handed over parameters in our 
-[individual plugin implementation](https://github.com/haesleinhuepf/extend-macro-autocompletion/commit/5e10bab2e1e7b2389a7c2b528acf2473f798b7b8#diff-2187e4c3058b3cb68492cfc36ecf00ddR36). 
+[individual plugin implementation](https://github.com/haesleinhuepf/extend-macro-autocompletion/commit/0da0983814c6128fc9f39e06cd667cecf015cd8c#diff-2187e4c3058b3cb68492cfc36ecf00ddR35-R44). 
 Then, we can call our algorithm:
 
 ```java
@@ -75,7 +75,7 @@ public void runFromMacro(Object[] parameters) {
     // We get an array of objects from the Macro interpeter.
     // We need to convert/cast it to what we need
     ImagePlus imp = WindowManager.getImage((String)parameters[0]);
-    double scalar = Double.parseDouble((String)parameters[1]);
+    double scalar = (Double)parameters[1];
 
     // call the actual algorithm
     actualAlgorithm(imp, scalar);
