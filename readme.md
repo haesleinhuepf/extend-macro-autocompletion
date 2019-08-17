@@ -1,10 +1,11 @@
 # Extending macro auto completion in Fijis script editor
 ## Outline
-[Introduction](https://haesleinhuepf.github.io/extend-macro-autocompletion/#introduction)
-[Starting point: a SciJava Fiji plugin](https://haesleinhuepf.github.io/extend-macro-autocompletion/#starting_point)
-[Extend ImageJ Macro](https://haesleinhuepf.github.io/extend-macro-autocompletion/#extend_macro)
-[Extend auto-completion of the script editor](https://haesleinhuepf.github.io/extend-macro-autocompletion/#extend_autocomplete)
-[What your plugin classes should contain](https://haesleinhuepf.github.io/extend-macro-autocompletion/#your_plugins)
+* [Introduction](https://haesleinhuepf.github.io/extend-macro-autocompletion/#introduction)
+* [Starting point: a SciJava Fiji plugin](https://haesleinhuepf.github.io/extend-macro-autocompletion/#starting_point)
+* [Extend ImageJ Macro](https://haesleinhuepf.github.io/extend-macro-autocompletion/#extend_macro)
+* [Extend auto-completion of the script editor](https://haesleinhuepf.github.io/extend-macro-autocompletion/#extend_autocomplete)
+* [What your plugin classes should contain](https://haesleinhuepf.github.io/extend-macro-autocompletion/#your_plugins)
+* [Summary](https://haesleinhuepf.github.io/extend-macro-autocompletion/#summary)
 
 <a name="introduction"></a>
 ## Introduction
@@ -135,7 +136,7 @@ MyMacroExtensionDescriptor[] list = {
 };
 ```
 There is an alternative for implementing an automated discovery strategy demonstrated in the 
-[plugin zoo example code](https://github.com/mpicbg-scicomp/ij2course-scijava-plugin-mechanism/tree/solution).
+[plugin zoo example code](https://github.com/mpicbg-scicomp/ij2course-scijava-plugin-mechanism/tree/solution/src/main/java/de/mpicbg/scf/rhaase/fiji/ij2course/scijavaservices).
 
 <a name="your_plugins"></a>
 ## What your plugin classes should contain
@@ -188,6 +189,7 @@ public void runFromMacro(Object[] parameters) {
 [the list](https://github.com/haesleinhuepf/extend-macro-autocompletion/commit/5e10bab2e1e7b2389a7c2b528acf2473f798b7b8#diff-bbfe4af2e74a5649dddd2f7175700d61R22) 
 or implement the plugin service as suggested above.
 
+<a name="summary"></a>
 ## Summary
 It's not 100%ly trivial to implement ImageJ Macro Extensions and thus, I hope this tutorial helps. 
 I think users will thank you if you go this step in order to simplify access to your algorithms via ImageJ macro.
