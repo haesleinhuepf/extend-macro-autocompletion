@@ -67,7 +67,7 @@ public class MyPluginAdd implements Command, MyMacroExtensionDescriptor {
      */
     @Override
     public String description() {
-        return "Hey folks, just enter an image and a number.\n\n :-)";
+        return "Hey folks, just enter an image and a number.\n\nThe number will then be added to all pixels.\n\n :-)";
     }
 
 
