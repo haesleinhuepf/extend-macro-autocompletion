@@ -1,4 +1,13 @@
 # Extending macro auto completion in Fijis script editor
+## Outline
+[Introduction](https://haesleinhuepf.github.io/extend-macro-autocompletion/#introduction)
+[Starting point: a SciJava Fiji plugin](https://haesleinhuepf.github.io/extend-macro-autocompletion/#starting_point)
+[Extend ImageJ Macro](https://haesleinhuepf.github.io/extend-macro-autocompletion/#extend_macro)
+[Extend auto-completion of the script editor](https://haesleinhuepf.github.io/extend-macro-autocompletion/#extend_autocomplete)
+[What your plugin classes should contain](https://haesleinhuepf.github.io/extend-macro-autocompletion/#your_plugins)
+
+<a name="introduction"></a>
+## Introduction
 Since we introduced auto-completion in Fijis script editor, some developers asked me 
 how they can make their tools discoverable by auto-completion. 
 That's a good question as the auto-completion also allows pointing users to online
@@ -8,6 +17,8 @@ this might be a better starting point for developers.
 
 ![Image](images/custom_autocomplete_screenshot.png)
 
+
+<a name="starting_point"></a>
 ## Starting point: a SciJava Fiji plugin
 As a starting point we assume to have a [maven](https://maven.apache.org/) project with a 
 [pom.xml](https://github.com/haesleinhuepf/extend-macro-autocompletion/blob/master/pom.xml) file defining a [SciJava](https://scijava.org) plugin for [Fiji](https://fiji.sc).
@@ -19,7 +30,8 @@ If you want to learn how to make SciJava/Fiji plugins, [this 5 minute video](htt
 The [actual algorithm](https://github.com/haesleinhuepf/extend-macro-autocompletion/commit/5e10bab2e1e7b2389a7c2b528acf2473f798b7b8#diff-2187e4c3058b3cb68492cfc36ecf00ddR26-R28) 
 we want to ship to users is available as a single method simplifying incorporating it in ImageJ macro and the script editor.
 
-## Step 1: Macro extensions
+<a name="extend_macro"></a>
+## Extend ImageJ Macro
 ImageJs [macro extensions](https://imagej.net/developer/macro/functions.html#Ext) are a pretty old and powerful mechanism to
 extens ImageJs macro language with custom code. It can be used by defining a [class implementing the interface MacroExtensions](https://github.com/haesleinhuepf/extend-macro-autocompletion/commit/5e10bab2e1e7b2389a7c2b528acf2473f798b7b8#diff-eabc1fa5161dcb95bfc0de38d0ae8aa2R26) interface:
 
@@ -91,7 +103,8 @@ Last, but not least, you need to actually [tell](https://github.com/haesleinhuep
 Functions.registerExtensions(this);
 ```
 
-## Step 2: Extend auto-completion of the script editor
+<a name="extend_autocomplete"></a>
+## Extend auto-completion of the script editor
 In order to tell users via auto-completion that your methods exist and which parameters they take, you need 
 [a class](https://github.com/haesleinhuepf/extend-macro-autocompletion/commit/5e10bab2e1e7b2389a7c2b528acf2473f798b7b8#diff-beb52a1812018a879515d5dc34958bf2R22) 
 implementing the
@@ -124,7 +137,8 @@ MyMacroExtensionDescriptor[] list = {
 There is an alternative for implementing an automated discovery strategy demonstrated in the 
 [plugin zoo example code](https://github.com/mpicbg-scicomp/ij2course-scijava-plugin-mechanism/tree/solution).
 
-## Your plugins
+<a name="your_plugins"></a>
+## What your plugin classes should contain
 In order to make your plugins discoverable by ImageJs Macro Interpreter and auto completion in Fijis script editor, 
 feel free to fork this repository, put in your algorithms (or depend on them) 
 and implement a small class for every method you would like to offer to the users. This class should contain:
