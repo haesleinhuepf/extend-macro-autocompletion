@@ -37,7 +37,7 @@ public class MyPluginMultiply implements Command, MyMacroExtensionDescriptor {
         // We get an array of objects from the Macro interpeter.
         // We need to convert/cast it to what we need
         ImagePlus imp = WindowManager.getImage((String)parameters[0]);
-        double scalar = Double.parseDouble((String)parameters[1]);
+        double scalar = (Double)parameters[1];
 
         // call the actual algorithm
         actualAlgorithm(imp, scalar);

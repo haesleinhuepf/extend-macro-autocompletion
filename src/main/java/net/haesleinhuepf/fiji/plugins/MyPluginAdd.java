@@ -37,7 +37,7 @@ public class MyPluginAdd implements Command, MyMacroExtensionDescriptor {
         // We get an array of objects from the Macro interpeter.
         // We need to convert/cast it to what we need
         ImagePlus imp = WindowManager.getImage((String)parameters[0]);
-        double scalar = Double.parseDouble((String)parameters[1]);
+        double scalar = (Double)parameters[1];
 
         // call the actual algorithm
         actualAlgorithm(imp, scalar);
@@ -67,7 +67,12 @@ public class MyPluginAdd implements Command, MyMacroExtensionDescriptor {
      */
     @Override
     public String description() {
-        return "Hey folks, just enter an image and a number.\n\nThe number will then be added to all pixels.\n\n :-)";
+        return "<b>Hey folks</b>,<br>" +
+                "just enter an image and a number.<br><br>" +
+                "The number will then be added to all pixels.<br><br>" +
+                "Oh and visit my website or follow me on twitter :-)<br><br>" +
+                "<a href=\"http://haesleinhuepf.net/\">haesleinhuepf.net</a><br>" +
+                "<a href=\"https://twitter.com/haesleinhuepf/\">twitter.com/haesleinhuepf</a><br>";
     }
 
 
