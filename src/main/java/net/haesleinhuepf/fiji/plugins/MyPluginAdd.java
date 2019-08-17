@@ -67,10 +67,8 @@ public class MyPluginAdd implements Command, MyMacroExtensionDescriptor {
      */
     @Override
     public String description() {
-        return "<b>Hey folks</b>,<br>" +
-                "just enter an image and a number.<br><br>" +
-                "The number will then be added to all pixels.<br><br>" +
-                "Oh and visit my website or follow me on twitter :-)<br><br>" +
+        return "<b>Hey folks</b>, just enter an image and a number.The number will then be added to all pixels.<br><br>" +
+                "Oh and visit my website or follow me on twitter :-)<br>" +
                 "<a href=\"http://haesleinhuepf.net/\">haesleinhuepf.net</a><br>" +
                 "<a href=\"https://twitter.com/haesleinhuepf/\">twitter.com/haesleinhuepf</a><br>";
     }
